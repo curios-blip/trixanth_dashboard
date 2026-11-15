@@ -1,0 +1,199 @@
+/* ============================================================
+   TRIXANTH INTERFACES — EXTRA STYLES
+   GeneralView MissionState banner, ArmRadoView RADO banner,
+   ReconEntry log, MarkerObservation readout.
+   These patch index.css without touching the full theme.
+   ============================================================ */
+
+/* Mission alert banner (MissionState.alert / /mission/alert) */
+.mission-alert-banner {
+  background: rgba(229, 84, 75, 0.15);
+  border: 1px solid var(--fault);
+  border-radius: var(--r);
+  color: var(--fault);
+  font-size: 11px;
+  padding: 5px 12px;
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+/* RADO top-of-view mission state summary banner */
+.rado-mission-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 5px 12px;
+  font-size: 11px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.rado-mode-tag   { color: var(--live); }
+.rado-timer-tag  { color: var(--text); }
+.rado-pts-tag    { color: var(--live); }
+.rado-fsm-tag    { color: var(--muted); }
+.rado-viol-tag   { color: var(--fault); }
+
+/* ReconEntry log in ArmRadoView */
+.recon-log-section {
+  margin-top: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+.recon-log-header {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+}
+.recon-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+.recon-log-row {
+  display: flex;
+  gap: 10px;
+  font-size: 10.5px;
+  align-items: baseline;
+}
+.recon-id    { color: var(--muted); min-width: 22px; }
+.recon-label { color: var(--live);  min-width: 120px; }
+.recon-conf  { color: var(--text);  min-width: 36px; }
+.recon-gps   { color: var(--text);  flex: 1; }
+.recon-acc   { color: var(--muted); }
+
+/* Interactive Command Deck for trixanth_interfaces */
+.mission-controls-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 6px 12px;
+  flex-wrap: wrap;
+}
+
+.cmd-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cmd-group-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-right: 2px;
+}
+
+.mode-btn,
+.mission-btn,
+.score-quick-btn {
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #121720;
+  border: 1px solid #232d3d;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mode-btn:hover,
+.mission-btn:hover,
+.score-quick-btn:hover {
+  background: #1c2533;
+  border-color: #3b4b62;
+  color: #fff;
+}
+
+.mode-btn.active.ok {
+  background: rgba(79, 214, 160, 0.15);
+  border-color: var(--live);
+  color: var(--live);
+  font-weight: 600;
+}
+
+.mode-btn.active.warn {
+  background: rgba(232, 184, 75, 0.15);
+  border-color: var(--warn);
+  color: var(--warn);
+  font-weight: 600;
+}
+
+.mode-btn.active.fault {
+  background: rgba(229, 84, 75, 0.15);
+  border-color: var(--fault);
+  color: var(--fault);
+  font-weight: 600;
+}
+
+.mission-btn.active {
+  background: rgba(90, 169, 255, 0.18);
+  border-color: var(--plan);
+  color: #8fc2ff;
+  font-weight: 600;
+}
+
+.mission-btn.stop {
+  color: var(--fault);
+  border-color: rgba(229, 84, 75, 0.4);
+}
+
+.mission-btn.penalty {
+  color: var(--warn);
+  border-color: rgba(232, 184, 75, 0.4);
+}
+
+.score-quick-btn {
+  color: var(--live);
+  border-color: rgba(79, 214, 160, 0.3);
+}
+
+/* RADO action buttons */
+.rado-action-btns-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.rado-act-btn {
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.rado-act-btn.start {
+  background: rgba(79, 214, 160, 0.15);
+  border: 1px solid var(--live);
+  color: var(--live);
+  font-weight: 600;
+}
+
+.rado-act-btn.abort {
+  background: rgba(229, 84, 75, 0.12);
+  border: 1px solid var(--fault);
+  color: var(--fault);
+}
+
+.rado-act-btn.capture {
+  background: rgba(90, 169, 255, 0.12);
+  border: 1px solid var(--plan);
+  color: #8fc2ff;
+}
+
+.rado-act-btn:hover {
+  filter: brightness(1.2);
+}
