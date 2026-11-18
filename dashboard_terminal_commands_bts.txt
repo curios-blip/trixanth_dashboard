@@ -1,0 +1,16 @@
+cd /home/gowthami/Downloads/trixanth_ws-main_with_dashboard1/trixanth_ws-main
+source /opt/ros/jazzy/setup.bash && source install/setup.bash
+rm -rf build/trixanth_dashboard install/trixanth_dashboard
+colcon build --packages-select trixanth_dashboard
+source install/setup.bash
+ros2 launch trixanth_dashboard dashboard.launch.py
+ros2 topic echo /ground/heartbeat
+ros2 topic echo /cmd_vel_teleop
+ros2 service list | grep set_mode #idk what this is for
+colcon build --packages-select trixanth_bringup trixanth_dashboard
+source install/setup.bash
+ros2 launch src/trixanth_bringup/launch/camera.launch.py 
+source /opt/ros/jazzy/setup.bash
+colcon build --packages-select trixanth_interfaces trixanth_dashboard
+source install/setup.bash
+any changes to the tf tree of the dashboard 
